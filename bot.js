@@ -71,7 +71,7 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
 if(reaction.channel.id === '746339469178699886')
 {
 
-    AndroidAds.message(reaction);
+    AndroidAds.message("REACTION");
 
 if(reaction.emoji.name === '✅')
 {
