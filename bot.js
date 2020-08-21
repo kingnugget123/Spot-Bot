@@ -13,7 +13,7 @@ client.on('ready', () => {
  
 
 client.on('message', message => {
- var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
+const ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
  
  
     if(message.author.bot) return;
@@ -61,8 +61,8 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
        if(reaction.message.channel.id === '746339469178699886'){
        if(reaction.emoji.name === "✅"){
         var message = reaction.message.content;
-        delete(reaction.message);
         reaction.channel.message("Submission Approved!");
+                   delete(reaction.message);
 
         if(message.substring(0, 8) == '?android'){
             message = message.substring(8);
@@ -70,8 +70,8 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
         }
         }
             else if(reaction.emoji.name === "❌"){
-                delete(reaction.message);
                 reaction.channel.message("Submission Deleted!");
+                                delete(reaction.message);
             }
         }
     })
