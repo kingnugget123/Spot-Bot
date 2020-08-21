@@ -54,13 +54,15 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
 
 
-        if(reaction.message.channel.id === ModerationChannel.channel.id){
+        if(reaction.message.channel.id === '746339469178699886'){
+       if(reaction.emoji.name === "✅"){
         var message = reaction.message.content
         delete(reaction.message.content)
 
         if(message.substring(0, 8) == '?android'){
             message = message.substring(8)
             AndroidAds.send(message)
+        }
         }
         }
     })
