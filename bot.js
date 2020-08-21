@@ -29,7 +29,7 @@ client.on('message', message => {
          
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.");
-        ModerationChannel.send(message.content).react('✅').react('❌');
+        ModerationChannel.send(message.content);
         }
          else
          {
@@ -56,7 +56,7 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
 
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`);
 
-        if(reaction.message.channel.id === '746339469178699886'){
+       if(reaction.message.channel.id === '746339469178699886'){
        if(reaction.emoji.name === "✅"){
         var message = reaction.message.content;
         delete(reaction.message);
