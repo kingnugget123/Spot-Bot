@@ -19,7 +19,7 @@ client.on('message', message => {
        message.reply('pong haha');
 
        }
-     else if(message.content === `?android`){
+     else if(message.content === '?android '){
     
         message.channel.send("Sent for moderation!")
     }
