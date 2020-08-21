@@ -72,7 +72,7 @@ else
 
 client.on('messageReactionAdd', (reaction, user) =>{ 
 
-print("Reacted! in " + channel.id + " Who? " + user.username);
+console.log("Reacted! in " + channel.id + " Who? " + user.username);
 reaction.channel.send("Big sad");
 
 
@@ -81,4 +81,4 @@ reaction.channel.send("Big sad");
 
 // THIS  MUST  BE  THIS  WAY
 
-client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client SecretOKEN);//BOT_TOKEN is the Client Secret
+client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
