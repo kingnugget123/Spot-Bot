@@ -73,7 +73,7 @@ else
 client.on('messageReactionAdd', (reaction, user) =>{ 
 
 
-reaction.channel.message("OOOOOF").send();
+reaction.channel.send("Big sad");
 
 
 
