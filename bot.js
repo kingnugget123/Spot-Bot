@@ -16,7 +16,7 @@ client.on('message', message => {
 
     if (message.content === 'ping') {
 
-       message.reply('pong');
+       message.reply('pong haha');
 
        }
      else if(message.content === `?android `){
