@@ -24,8 +24,12 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
     }
 
 
-else if(message.content.startsWith("?android") && message.channel.id === '745787684739612693')
+else if(message.content.startsWith("?android"))
 {
+
+if(message.channel.id === '745787684739612693'){
+
+
 
     if(message.content.length >= 50)
     {
@@ -41,7 +45,8 @@ else if(message.content.startsWith("?android") && message.channel.id === '745787
         message.delete();
     }
 }
-else if(message.content.startsWith("?android") && !message.channel.id == '745787684739612693')
+}
+else
 {
 message.reply('Cannot advertise here.');
 message.delete();
