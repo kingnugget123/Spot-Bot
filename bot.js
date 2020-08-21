@@ -73,7 +73,7 @@ if(reaction.channel.id === '746339469178699886')
 
     AndroidAds.message("REACTION");
 
-if(reaction.emoji.name === '✅')
+if(reaction.emoji.id === ':white_check_mark:')
 {
 var newmessage = reaction.message.content;
     user.reply("Approved submission!");
@@ -89,7 +89,7 @@ var newmessage = reaction.message.content;
 
 }
 
-else if(reaction.emoji.name == '❌')
+else if(reaction.emoji.id == ':x:')
 {
 
     reaction.message.delete();
