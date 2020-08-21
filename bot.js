@@ -15,6 +15,7 @@ client.on('ready', () => {
 client.on('message', message => {
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
  
+    if(user.bot) return;
     if (message.content === 'ping') {
 
        message.reply('pong haha you suck');
@@ -26,7 +27,9 @@ client.on('message', message => {
          
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.")
-        ModerationChannel.send(message.content)
+        var modmessage = ModerationChannel.send(message.content)
+        modmessage.react('✅')
+        modmessage.react('❌')
         }
          else
          {
@@ -53,7 +56,7 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
 
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
 
-
+if(user.bot) return;
         if(reaction.message.channel.id === '746339469178699886'){
        if(reaction.emoji.name === "✅"){
         var message = reaction.message.content
@@ -64,6 +67,9 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
             AndroidAds.send(message)
         }
         }
+            else if(reaction.emoji.name === "❌"){
+                delete(reaction.message.content)
+            }
         }
     })
 
