@@ -19,7 +19,7 @@ client.on('message', message => {
     if(message.author.bot) return;
     if (message.content === 'ping') {
 
-       message.reply('pong haha you suck');
+       message.reply('pong haha you suck').react('✅');
        message.react('✅')
 
        }
