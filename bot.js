@@ -43,7 +43,7 @@ ModerationChannel.send(message.content).then(async msg => {
     await msg.react("❌");
     });
 }
-}
+
 
 
 
@@ -52,13 +52,22 @@ else
 message.reply('Advertisements need to be 50+ characters in length.');
 message.delete();
 }
-}
 
+
+
+
+
+}
 else 
 {
 
     message.reply('Cannot advertise here, sorry.');
     message.delete();
+}
+
+
+
+
 }
 });
 
