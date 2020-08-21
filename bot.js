@@ -19,7 +19,7 @@ client.on('message', message => {
        message.reply('pong haha you suck');
 
        }
-     else if(message.content === '?android '){
+     else if(message.content === '?android'){
     
         if(message.channel.id === '745787684739612693'){
         message.channel.send("Sent for moderation!")
