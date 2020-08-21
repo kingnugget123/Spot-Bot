@@ -27,31 +27,34 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
 else if(message.content.startsWith("?android"))
 {
 
-if(message.channel.id === '745787684739612693'){
+if(message.channel.id === '745787684739612693')
+{
 
+if(message.content.length >= 50)
+{
 
-
-    if(message.content.length >= 50)
-    {
-    message.reply("Sent advertisement for moderation review, please be patient.");
-    ModerationChannel.send(message.content).then(async msg => {
+message.reply('Sending advertisement for review.')
+ModerationChannel.send(message.content).then(async msg => {
     await msg.react("✅");
     await msg.react("❌");
     });
 }
-    else
-    {
-        message.reply('Your advertisement must be 50+ characters in length.');
-        message.delete();
-    }
-}
-}
 else
 {
-message.reply('Cannot advertise here.');
+message.reply('Advertisements need to be 50+ characters in length.');
 message.delete();
 }
-});
+
+
+}
+else 
+{
+
+    message.reply('Cannot advertise here, sorry.');
+    message.delete();
+}
+
+}
 
 
 
