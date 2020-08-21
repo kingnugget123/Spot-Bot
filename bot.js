@@ -30,6 +30,7 @@ client.on('message', message => {
         if(message.channel.id === '745787684739612693'){
          
         if(message.content.length >= 50){
+        message.reply('Advertisement was sent for approval, Please be patient.')
         ModerationChannel.send(message.content)
         message.channel.send("Sent for moderation!")
         }
