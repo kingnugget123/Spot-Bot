@@ -31,8 +31,8 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
         ModerationChannel.send(message.content).then(async msg => {
         await msg.react("✔");
         await msg.react("❌");
-}
-}
+        }
+)}
         }
          else
          {
