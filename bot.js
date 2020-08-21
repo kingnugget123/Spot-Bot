@@ -51,6 +51,8 @@ var IosAds = client.channels.find(channel => channel.id === `745787459513745428`
 var PcAds = client.channels.find(channel => channel.id === `745787495098351696`)
 var OtherAds = client.channels.find(channel => channel.id === `745787545719144518`)
 
+ var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
+
 
         if(reaction.message.channel.id === ModerationChannel.channel.id){
         var message = reaction.message.content
