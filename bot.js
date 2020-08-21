@@ -26,13 +26,15 @@ client.on('message', message => {
 
        }
      else if(message.content.startsWith('?android')){
-    
+      
         if(message.channel.id === '745787684739612693'){
+         
         if(message.content.length >= 50){
         ModerationChannel.send(message.content.toString())
         message.channel.send("Sent for moderation!")
         }
-         else{
+         else
+         {
           message.channel.send("Advertisement must be 50 characters +")
          }
         }
