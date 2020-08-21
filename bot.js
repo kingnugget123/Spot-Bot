@@ -73,10 +73,10 @@ if(reaction.channel.id === '746339469178699886')
 
     AndroidAds.message("REACTION");
 
-if(reaction.emoji.id === ':white_check_mark:')
+if(reaction.emoji.name === '✅')
 {
 var newmessage = reaction.message.content;
-    user.reply("Approved submission!");
+reaction.channel.message("Approved Submission!");
 
     if(newmessage.startsWith("?android"))
     {
@@ -89,11 +89,11 @@ var newmessage = reaction.message.content;
 
 }
 
-else if(reaction.emoji.id == ':x:')
+else if(reaction.emoji.name == '❌')
 {
 
     reaction.message.delete();
-    user.reply("Removed submission!");
+    reaction.channel.message("Removed Submission!");
 
 }
 }
