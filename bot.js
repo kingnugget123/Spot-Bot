@@ -28,8 +28,8 @@ client.on('message', message => {
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.");
         var modmessage = ModerationChannel.send(message.content);
-         modmessage.react(':white_check_mark:');
-         modmessage.react(':x:');  
+         modmessage.react('✅');
+         modmessage.react('❌');  
         }
          else
          {
@@ -58,7 +58,7 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
 
        if(user.bot) return;
         if(reaction.message.channel.id === '746339469178699886'){
-       if(reaction.emoji.name === ":white_check_mark:"){
+       if(reaction.emoji.name === "✅"){
         var message = reaction.message.content;
         delete(reaction.message);
         reaction.channel.message("Submission Approved!");
@@ -68,7 +68,7 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
             AndroidAds.send(message);
         }
         }
-            else if(reaction.emoji.name === ":x:"){
+            else if(reaction.emoji.name === "❌"){
                 delete(reaction.message);
                 reaction.channel.message("Submission Deleted!");
             }
