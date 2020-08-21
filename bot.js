@@ -15,7 +15,13 @@ client.on('ready', () => {
 client.on('message', message => {
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
  
-    if(message.author.bot) return;
+    if(message.author.bot && message.startsWith('?') && message.channelid == ModerationChannel.channel.id)
+    {
+    message.react('✅');
+    message.react('❌'); 
+    }
+    else if(message.author.bot) return;
+    
     if (message.content === 'ping') {
 
        message.reply('pong haha you suck');
