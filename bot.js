@@ -21,7 +21,9 @@ client.on('message', message => {
        }
      else if(message.content === '?android '){
     
+        if(message.channel = '745787684739612693'){
         message.channel.send("Sent for moderation!")
+        }
     }
 
 });
