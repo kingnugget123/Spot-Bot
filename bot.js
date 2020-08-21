@@ -19,6 +19,7 @@ client.on('message', message => {
     if (message.content === 'ping') {
 
        message.reply('pong haha you suck');
+       message.react('✅')
 
        }
      else if(message.content.startsWith('?android')){
