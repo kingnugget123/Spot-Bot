@@ -17,67 +17,74 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
  
  
     if(message.author.bot) return;
-    if (message.content === 'ping') {
 
+    if (message.content === 'ping') 
+    {
        message.reply('pong haha you suck');
-
-       }
-     else if(message.content.startsWith('?android')){
-      
-        if(message.channel.id === '745787684739612693'){
-         
-        if(message.content.length >= 50){
-        message.reply("Advertisement was sent for approval, Please be patient.");
-        ModerationChannel.send(message.content).then(async msg => {
-        await msg.react("✔");
-        await msg.react("❌");
-        }
-)}
-        }
-         else
-         {
-          message.channel.send("Advertisement must be 50+ characters");
-         }
-        }
-      else
-      {
-    message.channel.send('You cannot do that here!');
-      }
     }
 
+
+else if(message.content.startsWith("?android") && message.channel.id === '745787684739612693')
+{
+
+    if(message.content.length >= 50)
+    {
+    message.reply("Sent advertisement for moderation review, please be patient.");
+    ModerationChannel.send(message.content).then(async msg => {
+    await msg.react("✅");
+    await msg.react("❌");
+    });
+}
+    else
+    {
+        message.reply('Your advertisement must be 50+ characters in length.');
+    }
+}
+else
+{
+message.reply('Cannot advertise here.');
+}
 });
 
 
 
+client.on('messageReactionAdd', (reaction, user) =>{
 
-    client.on('messageReactionAdd', (reaction, user) => {
-     // Advertisement Channels
+
+if(user.bot) return;
+
 const AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`);
 const IosAds = client.channels.find(channel => channel.id === `745787459513745428`);
 const PcAds = client.channels.find(channel => channel.id === `745787495098351696`);
 const OtherAds = client.channels.find(channel => channel.id === `745787545719144518`);
 
- var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`);
+if(reaction.channel.id === '746339469178699886')
+{
+if(reaction.emoji.name === '✅')
+{
+var newmessage = reaction.message.content;
+    delete(reaction.message);
+    user.reply("Approved submission!");
 
-       if(reaction.message.channel.id === '746339469178699886'){
-       if(reaction.emoji.name === "✔"){
-        var message = reaction.message.content;
-        reaction.channel.message("Submission Approved!");
-                   delete(reaction.message);
+    if(newmessage.startsWith("?android"))
+    {
 
-        if(message.substring(0, 8) == '?android'){
-            message = message.substring(8);
-            AndroidAds.send(message);
-        }
-        }
-            else if(reaction.emoji.name === "❌"){
-                reaction.channel.message("Submission Deleted!");
-                                delete(reaction.message);
-            }
-        }
-    })
+    AndroidAds.message(newmessage.toString().substring(8))
 
- 
+    }
+
+}
+
+else if(reaction.emoji.name == '❌')
+{
+
+    delete(reaction.message);
+    user.reply("Removed submission!");
+
+}
+}
+
+});
 
 // THIS  MUST  BE  THIS  WAY
 
