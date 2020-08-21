@@ -60,7 +60,7 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
 
 if(reaction.channel.id === '746339469178699886')
 {
-if(reaction.emoji === '✅')
+if(reaction.emoji.name === '✅')
 {
 var newmessage = reaction.message.content;
     user.reply("Approved submission!");
@@ -76,7 +76,7 @@ var newmessage = reaction.message.content;
 
 }
 
-else if(reaction.emoji == '❌')
+else if(reaction.emoji.name == '❌')
 {
 
     delete(reaction.message);
