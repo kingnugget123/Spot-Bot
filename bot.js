@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-let AdvertisementPost = new Discord.MessageEmbed();
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -52,6 +51,7 @@ if(msg.content.length >= 10) {
       adcategory = msg.content.substring(0, 6);
       messagewithoutcategory = msg.content.substring(6);
    }
+   let AdvertisementPost = new Discord.MessageEmbed();
    AdvertisementPost = new Discord.MessageEmbed().setAuthor('By ' + msg.author.tag).setDescription(messagewithoutcategory).setTitle(adcategory);
    moderationchannel.send(AdvertisementPost).then(async messageto => {
 
@@ -103,7 +103,8 @@ if(react.emoji.name === '✅') {
 react.message.channel.send('```Approved Submission```');
 const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
-
+let AdvertisementPost = new Discord.MessageEmbed();
+AdvertisementPost.setDescription(react.message.embeds[0].description);
 
 if(category == '?android') {
 
