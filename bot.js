@@ -20,7 +20,6 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
     if (message.content === 'ping') {
 
        message.reply('pong haha you suck');
-       message.react('✅')
 
        }
      else if(message.content.startsWith('?android')){
@@ -29,9 +28,10 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
          
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.");
-        var messagetoreactto = ModerationChannel.send(message.content);
-        messagetoreactto.react('✅')
-        messagetoreactto.react('❌')
+        var messagetoreactto = ModerationChannel.send(message.content).then(async msg => {
+        await msg.react("✔");
+        await msg.react("❌");
+}
         }
          else
          {
@@ -59,7 +59,7 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`);
 
        if(reaction.message.channel.id === '746339469178699886'){
-       if(reaction.emoji.name === "✅"){
+       if(reaction.emoji.name === "✔"){
         var message = reaction.message.content;
         reaction.channel.message("Submission Approved!");
                    delete(reaction.message);
