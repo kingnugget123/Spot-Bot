@@ -63,37 +63,13 @@ client.on('messageReactionAdd', (reaction, user) =>{
 
 if(user.bot) return;
 
-const AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`);
-const IosAds = client.channels.find(channel => channel.id === `745787459513745428`);
-const PcAds = client.channels.find(channel => channel.id === `745787495098351696`);
-const OtherAds = client.channels.find(channel => channel.id === `745787545719144518`);
-
-if(reaction.channel.id === '746339469178699886')
+if(reaction.emoji.name === "✅")
 {
-
-
-if(reaction.emoji.name === '✅')
-{
-reaction.channel.message("Approved Submission!");
-
-    if(reaction.message.content.startsWith("?android"))
-    {
-
-    AndroidAds.message(reaction.message.content.toString().substring(8))
-
-    reaction.message.delete();
-
-    }
-
+reaction.channel.message("Accepted.")
 }
-
-else if(reaction.emoji.name === '❌')
+else if(reaction.emoji.name === "❌")
 {
-
-    reaction.message.delete();
-    reaction.channel.message("Removed Submission!");
-
-}
+reaction.channel.message("Deleted.")
 }
 });
 
