@@ -14,64 +14,39 @@ client.on('ready', () => {
 
 });
 
- 
+
 
 client.on('message', message => {
- 
- 
+
     if(message.author.bot) return;
 
-    if (message.content === 'ping') 
-    {
-       message.reply('pong haha you suck');
+
+    if(message.content.startsWith('?android')){
+
+        if(message.channel.id == 745787684739612693){
+
+            if(message.content.length >= 50)
+            {
+            message.reply('Sending advertisement for review.')
+            
+            ModerationChannel.send(message.content).then(async msg => {
+                await msg.react("✅");
+                await msg.react("❌");
+                });
+            } // Line for not being long enough
+            else
+            {
+             message.reply("Sorry, the advertisement needs to be 50+ characters long.");
+             message.delete();
+            }
+        } // Line for not being in correct channel
+    else{
+        message.reply("You cannot advertise here.")
+        message.delete();
     }
 
-
-else if(message.content.startsWith("?android"))
-{
-
-
-if(message.channel.id === '745787684739612693')
-{
-
-if(message.content.length >= 50)
-{
-message.reply('Sending advertisement for review.')
-
-ModerationChannel.send(message.content).then(async msg => {
-    await msg.react("✅");
-    await msg.react("❌");
-    });
-}
-
-
-
-
-else
-{
-message.reply('Advertisements need to be 50+ characters in length.');
-message.delete();
-}
-
-
-
-
-
-}
-else 
-{
-
-    message.reply('Cannot advertise here, sorry.');
-    message.delete();
-}
-
-
-
-
-}
-});
-
-
+    } // Line for not starting for android
+})
 
 client.on('messageReactionAdd', (reaction, user) =>{ 
 
