@@ -26,19 +26,19 @@ client.on('message', message => {
         if(message.channel.id === '745787684739612693'){
          
         if(message.content.length >= 50){
-        message.reply("Advertisement was sent for approval, Please be patient.")
-        var modmessage = ModerationChannel.send(message.content)
-        modmessage.react('✅')
-        modmessage.react('❌')
+        message.reply("Advertisement was sent for approval, Please be patient.");
+        var modmessage = ModerationChannel.send(message.content);
+        modmessage.react('✅');
+        modmessage.react('❌');
         }
          else
          {
-          message.channel.send("Advertisement must be 50+ characters")
+          message.channel.send("Advertisement must be 50+ characters");
          }
         }
       else
       {
-    message.channel.send('You cannot do that here!')
+    message.channel.send('You cannot do that here!');
       }
     }
 
@@ -49,26 +49,26 @@ client.on('message', message => {
 
     client.on('messageReactionAdd', (reaction, user) => {
      // Advertisement Channels
-var AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`)
-var IosAds = client.channels.find(channel => channel.id === `745787459513745428`)
-var PcAds = client.channels.find(channel => channel.id === `745787495098351696`)
-var OtherAds = client.channels.find(channel => channel.id === `745787545719144518`)
+var AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`);
+var IosAds = client.channels.find(channel => channel.id === `745787459513745428`);
+var PcAds = client.channels.find(channel => channel.id === `745787495098351696`);
+var OtherAds = client.channels.find(channel => channel.id === `745787545719144518`);
 
- var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
+ var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`);
 
        if(reaction.author.bot) return;
         if(reaction.message.channel.id === '746339469178699886'){
        if(reaction.emoji.name === "✅"){
-        var message = reaction.message.content
-        delete(reaction.message.content)
+        var message = reaction.message.content;
+        delete(reaction.message.content);
 
         if(message.substring(0, 8) == '?android'){
-            message = message.substring(8)
-            AndroidAds.send(message)
+            message = message.substring(8);
+            AndroidAds.send(message);
         }
         }
             else if(reaction.emoji.name === "❌"){
-                delete(reaction.message.content)
+                delete(reaction.message.content);
             }
         }
     })
