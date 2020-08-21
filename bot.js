@@ -2,7 +2,13 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
- 
+ var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
+
+// Advertisement Channels
+var AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`)
+var IosAds = client.channels.find(channel => channel.id === `745787459513745428`)
+var PcAds = client.channels.find(channel => channel.id === `745787495098351696`)
+var OtherAds = client.channels.find(channel => channel.id === `745787545719144518`)
 
 client.on('ready', () => {
 
@@ -22,9 +28,8 @@ client.on('message', message => {
      else if(message.content.startsWith('?android')){
     
         if(message.channel.id === '745787684739612693'){
-        var AndroidChannel = client.channels.find(channel => channel.id === `745787421056172093`)
         if(message.content.length >= 50){
-        AndroidChannel.send(message.content.toString().substring(8))
+        ModerationChannel.send(message.content.toString()
         message.channel.send("Sent for moderation!")
         }
          else{
@@ -37,6 +42,21 @@ client.on('message', message => {
     }
 
 });
+
+
+
+
+    client.on('messageReactionAdd', (reaction, user) => {
+        if(reaction.message.channel.id === ModerationChannel.channel.id){
+        var message = reaction.message.content
+        delete(reaction.message.content)
+
+        if(message.substring(0, 8) == '?android'){
+            message = message.substring(8)
+            AndroidAds.send(message)
+        }
+        }
+    })
 
  
 
