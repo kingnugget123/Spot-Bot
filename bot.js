@@ -72,10 +72,12 @@ else
 
 client.on('messageReactionAdd', (reaction, user) =>{ 
 
-    reaction.channel.send("YDASWJFDJKSABFJSBFKJSBFJKBFJKASBFJKASBFJKSF");
+    if(user.bot) return;
 
-
-
+    if(reaction.emoji.name == "✅")
+    {
+        console.log("tick emoji!")
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
