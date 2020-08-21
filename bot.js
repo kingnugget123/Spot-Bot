@@ -19,7 +19,7 @@ client.on('message', message => {
     if(message.author.bot) return;
     if (message.content === 'ping') {
 
-       message.reply('pong haha you suck').react('✅');
+       message.reply('pong haha you suck');
        message.react('✅')
 
        }
@@ -49,10 +49,10 @@ client.on('message', message => {
 
     client.on('messageReactionAdd', (reaction, user) => {
      // Advertisement Channels
-var AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`);
-var IosAds = client.channels.find(channel => channel.id === `745787459513745428`);
-var PcAds = client.channels.find(channel => channel.id === `745787495098351696`);
-var OtherAds = client.channels.find(channel => channel.id === `745787545719144518`);
+const AndroidAds = client.channels.find(channel => channel.id === `745787421056172093`);
+const IosAds = client.channels.find(channel => channel.id === `745787459513745428`);
+const PcAds = client.channels.find(channel => channel.id === `745787495098351696`);
+const OtherAds = client.channels.find(channel => channel.id === `745787545719144518`);
 
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`);
 
