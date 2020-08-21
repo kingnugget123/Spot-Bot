@@ -23,7 +23,7 @@ client.on('message', message => {
     
         if(message.channel.id === '745787684739612693'){
         var AndroidChannel = client.channels.find(channel => channel.id === `745787421056172093`)
-        AndroidChannel.send(message)
+        AndroidChannel.send(message.toString().substring(8))
         message.channel.send("Sent for moderation!")
         }
       else{
