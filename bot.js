@@ -29,7 +29,7 @@ client.on('message', message => {
          
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.");
-        ModerationChannel.send(message.content);
+        ModerationChannel.send(message.content).react('✅').react('❌');
         }
          else
          {
