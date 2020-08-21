@@ -20,7 +20,7 @@ client.on('message', message => {
     message.react('✅');
     message.react('❌'); 
     }
-    else if(message.author.bot) return;
+    if(message.author.bot) return;
     
     if (message.content === 'ping') {
 
