@@ -29,7 +29,7 @@ client.on('message', message => {
     
         if(message.channel.id === '745787684739612693'){
         if(message.content.length >= 50){
-        ModerationChannel.send(message.content.toString()
+        ModerationChannel.send(message.content.toString())
         message.channel.send("Sent for moderation!")
         }
          else{
