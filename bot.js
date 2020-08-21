@@ -60,10 +60,9 @@ const OtherAds = client.channels.find(channel => channel.id === `745787545719144
 
 if(reaction.channel.id === '746339469178699886')
 {
-if(reaction.emoji.name === '✅')
+if(reaction.emoji === '✅')
 {
 var newmessage = reaction.message.content;
-    delete(reaction.message);
     user.reply("Approved submission!");
 
     if(newmessage.startsWith("?android"))
@@ -71,11 +70,13 @@ var newmessage = reaction.message.content;
 
     AndroidAds.message(newmessage.toString().substring(8))
 
+    delete(reaction.message)
+
     }
 
 }
 
-else if(reaction.emoji.name == '❌')
+else if(reaction.emoji == '❌')
 {
 
     delete(reaction.message);
