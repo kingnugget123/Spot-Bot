@@ -81,7 +81,7 @@ var newmessage = reaction.message.content;
 else if(reaction.emoji.name == '❌')
 {
 
-    delete(reaction.message);
+    delete reaction.message;
     user.reply("Removed submission!");
 
 }
