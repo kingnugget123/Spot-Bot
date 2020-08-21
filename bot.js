@@ -15,7 +15,7 @@ client.on('ready', () => {
 client.on('message', message => {
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
  
-    if(user.bot) return;
+    if(message.author.bot) return;
     if (message.content === 'ping') {
 
        message.reply('pong haha you suck');
@@ -56,7 +56,7 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
 
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
 
-if(user.bot) return;
+       if(reaction.author.bot) return;
         if(reaction.message.channel.id === '746339469178699886'){
        if(reaction.emoji.name === "✅"){
         var message = reaction.message.content
