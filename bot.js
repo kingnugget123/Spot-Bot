@@ -38,13 +38,13 @@ else if(message.content.startsWith("?android") && message.channel.id === '745787
     else
     {
         message.reply('Your advertisement must be 50+ characters in length.');
-        delete message;
+        message.delete();
     }
 }
-else
+else if(message.content.startsWith("?android") && !message.channel.id == '745787684739612693')
 {
 message.reply('Cannot advertise here.');
-delete message;
+message.delete();
 }
 });
 
@@ -72,7 +72,7 @@ var newmessage = reaction.message.content;
 
     AndroidAds.message(newmessage.toString().substring(8))
 
-    delete reaction.message;
+    reaction.message.delete();
 
     }
 
@@ -81,7 +81,7 @@ var newmessage = reaction.message.content;
 else if(reaction.emoji.name == '❌')
 {
 
-    delete reaction.message;
+    reaction.message.delete();
     user.reply("Removed submission!");
 
 }
