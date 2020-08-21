@@ -27,6 +27,7 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
 else if(message.content.startsWith("?android"))
 {
 
+
 if(message.channel.id === '745787684739612693')
 {
 
@@ -39,11 +40,18 @@ ModerationChannel.send(message.content).then(async msg => {
     await msg.react("❌");
     });
 }
+
+
+
+
 else
 {
 message.reply('Advertisements need to be 50+ characters in length.');
 message.delete();
 }
+
+
+
 
 
 }
@@ -53,24 +61,22 @@ else
     message.reply('Cannot advertise here, sorry.');
     message.delete();
 }
+
+
+
+
 }
 });
 
 
 
-client.on('messageReactionAdd', (reaction, user) =>{
+client.on('messageReactionAdd', (reaction, user) =>{ 
 
 
-if(user.bot) return;
+reaction.channel.message("OOOOOF").send();
 
-if(reaction.emoji.name === "✅")
-{
-reaction.channel.message("Accepted.")
-}
-else if(reaction.emoji.name === "❌")
-{
-reaction.channel.message("Deleted.")
-}
+
+
 });
 
 // THIS  MUST  BE  THIS  WAY
