@@ -20,7 +20,6 @@ client.on('message', message => {
     message.react('✅');
     message.react('❌'); 
     }
-    if(message.author.bot) return;
     
     if (message.content === 'ping') {
 
@@ -61,7 +60,6 @@ var OtherAds = client.channels.find(channel => channel.id === `74578754571914451
 
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`);
 
-       if(user.bot) return;
         if(reaction.message.channel.id === '746339469178699886'){
        if(reaction.emoji.name === "✅"){
         var message = reaction.message.content;
