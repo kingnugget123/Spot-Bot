@@ -34,7 +34,7 @@ client.on('message', message => {
          
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.");
-        var modmessage = ModerationChannel.send(message.content);
+        ModerationChannel.send(message.content);
         }
          else
          {
