@@ -15,6 +15,8 @@ client.on('ready', () => {
 client.on('message', message => {
  var ModerationChannel = client.channels.find(channel => channel.id === `746339469178699886`)
  
+ 
+    if(message.author.bot) return;
     if (message.content === 'ping') {
 
        message.reply('pong haha you suck');
