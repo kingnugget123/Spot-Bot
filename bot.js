@@ -72,7 +72,7 @@ if(reaction.channel.id === '746339469178699886')
 {
 
 
-if(reaction.emoji === '✅')
+if(reaction.emoji.name === '✅')
 {
 reaction.channel.message("Approved Submission!");
 
@@ -87,7 +87,7 @@ reaction.channel.message("Approved Submission!");
 
 }
 
-else if(reaction.emoji === '❌')
+else if(reaction.emoji.name === '❌')
 {
 
     reaction.message.delete();
