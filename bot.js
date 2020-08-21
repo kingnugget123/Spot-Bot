@@ -28,9 +28,10 @@ const ModerationChannel = client.channels.find(channel => channel.id === `746339
          
         if(message.content.length >= 50){
         message.reply("Advertisement was sent for approval, Please be patient.");
-        var msg = ModerationChannel.send(message.content).then(async msg => {
+        ModerationChannel.send(message.content).then(async msg => {
         await msg.react("✔");
         await msg.react("❌");
+}
 }
         }
          else
