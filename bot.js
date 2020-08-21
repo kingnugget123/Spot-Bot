@@ -16,7 +16,7 @@ client.on('message', message => {
 
     if (message.content === 'ping') {
 
-       message.reply('pong haha');
+       message.reply('pong haha you suck');
 
        }
      else if(message.content === '?android '){
@@ -24,6 +24,9 @@ client.on('message', message => {
         if(message.channel.id === '745787684739612693'){
         message.channel.send("Sent for moderation!")
         }
+      else{
+    message.channel.send('You cannot do that here!')
+      }
     }
 
 });
