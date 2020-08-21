@@ -53,8 +53,8 @@ else
     message.reply('Cannot advertise here, sorry.');
     message.delete();
 }
-
 }
+});
 
 
 
@@ -94,7 +94,6 @@ else if(reaction.emoji.name == '❌')
 
 }
 }
-
 });
 
 // THIS  MUST  BE  THIS  WAY
