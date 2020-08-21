@@ -19,7 +19,7 @@ client.on('message', message => {
        message.reply('pong haha you suck');
 
        }
-     else if(message.content === '?android'){
+     else if(message.content.startsWith === '?android '){
     
         if(message.channel.id === '745787684739612693'){
         var AndroidChannel = client.channels.find(channel => channel.id === `745787421056172093`)
