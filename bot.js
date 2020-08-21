@@ -71,9 +71,8 @@ else
 
 
 client.on('messageReactionAdd', (reaction, user) =>{ 
-var channel = client.channels.find(channel);
-console.log("Reacted! in " + channel.id + " Who? " + user.username);
-reaction.channel.send("Big sad");
+
+    reaction.channel.send("YDASWJFDJKSABFJSBFKJSBFJKBFJKASBFJKASBFJKSF");
 
 
 
