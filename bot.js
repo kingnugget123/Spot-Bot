@@ -52,20 +52,20 @@ client.on('message', msg => {
 				}
 				let AdvertisementPost = new Discord.MessageEmbed();
             moderationchannel.send({
-               content: adcategory,
+               content: '',
                embed: {
                    color: 11416728,
                    author: {
                        name: msg.author.tag,
-                       icon_url: msg.author.avatarURL,
+                       icon_url: msg.author.avatarURL(),
                    },
-                   description: messagewithoutcategory,
+                   description: '',
                    footer: {
                        text: adcategory,
                    },
                    fields: [
                        {
-                           name: '1st Line',
+                           name: messagewithoutcategory,
                            value: '2nd Line',
                        },
                        {
@@ -73,12 +73,12 @@ client.on('message', msg => {
                            value: '\u200B',
                        },
                        {
-                           name: '5th Line',
-                           value: '6th Line',
+                           name: 'Contact:',
+                           value: '7th Line',
                        }
                    ]
                }
-           });
+           }).setTitle(adcategory);
 
 				moderationchannel.send(AdvertisementPost).then(async messageto => {
 
