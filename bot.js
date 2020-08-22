@@ -91,7 +91,6 @@ const OtherChannel = client.channels.cache.get('745787545719144518');
 const guildid = client.guilds.cache.get('745787068843688017');
 const moderationchannel = client.channels.cache.get('746339469178699886');
 
-
 console.log(react.emoji.name);
 console.log(react.message.content);
 
@@ -140,7 +139,7 @@ else if(category == '?other') {
 
 }
 else if(react.emoji.name === '❌') {
-channel.messages.fetch(react.message.id);
+   moderationchannel.messages.fetch(react.message.id);
    if(react.count <= 1) return;
    react.message.channel.send('```Submission Deleted```');
    react.message.delete();
