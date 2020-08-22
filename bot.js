@@ -110,7 +110,7 @@ client.on('messageReactionAdd', react => {
 		const AdvertisementPost = new Discord.MessageEmbed();
       AdvertisementPost.setDescription(react.message.embeds[0].description);
       AdvertisementPost.setAuthor(react.message.embeds[0].author.name);
-      AdvertisementPost.setThumbnail(react.message.embeds[0].thumbnail);
+      AdvertisementPost.setThumbnail(react.message.embeds[0].thumbnail.url);
 
 		if(category == '?android') {
 
