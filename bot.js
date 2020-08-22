@@ -57,7 +57,6 @@ if(msg.content.length >= 10) {
 
 await messageto.react('✅');
 await messageto.react('❌');
-await moderationchannel.messages.fetch(messageto.id);
    }).catch(error => {
 
 // error
