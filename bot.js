@@ -97,8 +97,6 @@ console.log(react.message.content);
 
 console.log('Correct Channel');
 
-channel.messages.fetch({ limit: 50 }).then(messages => console.log(`Received ${messages.size} messages`)).catch(console.error);
-
 if(react.count <= 1) return;
 
 
