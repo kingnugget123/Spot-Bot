@@ -51,7 +51,7 @@ client.on('message', msg => {
 					messagewithoutcategory = msg.content.substring(6);
 				}
 				let AdvertisementPost = new Discord.MessageEmbed();
-				AdvertisementPost = new Discord.MessageEmbed().setAuthor('By @' + msg.author.avatar).setDescription(messagewithoutcategory).setTitle(adcategory);
+				AdvertisementPost = new Discord.MessageEmbed().setAuthor('By @' + msg.author.tag).setDescription(messagewithoutcategory).setTitle(adcategory);
 				moderationchannel.send(AdvertisementPost).then(async messageto => {
 
 					await messageto.react('✅');
