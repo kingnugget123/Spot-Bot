@@ -38,7 +38,7 @@ client.on('message', msg => {
 				advertisedrecently.add(msg.author.id);
 				setTimeout(() => {
                 advertisedrecently.delete(msg.author.id)
-				}, 30000)
+				}, 600000)
 				msg.reply('Sent your advertisement for manual approval, Please be patient.');
 				let messagewithoutcategory;
 				let adcategory;
