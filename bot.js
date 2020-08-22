@@ -57,7 +57,7 @@ if(msg.content.length >= 10) {
 
 await messageto.react('✅');
 await messageto.react('❌');
-await channel.messages.fetch({ limit: 50 }).then(messages => console.log(`Received ${messages.size} messages`)).catch(console.error);
+await moderationchannel.messages.fetch({ limit: 50 }).then(messages => console.log(`Received ${messages.size} messages`)).catch(console.error);
 
 // error
 
@@ -101,10 +101,13 @@ console.log('Correct Channel');
 if(react.count <= 1) return;
 
 if(react.emoji.name === '✅') {
-react.message.channel.send('```Submission Approved```'); 
+react.message.channel.send('```Submission Approved```').then(msg =>{
+
+   msg.delete(5000);
+});
 const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
-let AdvertisementPost = new Discord.MessageEmbed();
+const AdvertisementPost = new Discord.MessageEmbed();
 AdvertisementPost.setDescription(react.message.embeds[0].description);
 AdvertisementPost.setAuthor(react.message.embeds[0].author.name);
 
@@ -140,10 +143,14 @@ else if(category == '?other') {
 }
 else if(react.emoji.name === '❌') {
    
-   react.message.channel.send('```Submission Denied```'); 
+   react.message.channel.send('```Submission Denied```').then(msg =>{
+
+      msg.delete(5000);
+   });
    react.message.delete();
 }
 });
 // THIS  MUST  BE  THIS  WAY
 
-client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+client.login(process.env.BOT_TOKEN); 
+// BOT_TOKEN is the Client Secret
