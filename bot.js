@@ -57,6 +57,7 @@ if(msg.content.length >= 10) {
 
 await messageto.react('✅');
 await messageto.react('❌');
+await moderationchannel.fetch(messageto.id);
    }).catch(error => {
 
 // error
@@ -94,7 +95,7 @@ const moderationchannel = client.channels.cache.get('746339469178699886');
 console.log(react.emoji.name);
 console.log(react.message.content);
 
-if(react.channel.id == moderationchannel.id){
+if(!react.channel.id == moderationchannel.id) return;
 console.log('Correct Channel');
 
 if(react.count <= 1) return;
@@ -141,7 +142,6 @@ else if(react.emoji.name === '❌') {
    
    react.message.channel.send('```Submission Deleted```');
    react.message.delete();
-}
 }
 });
 // THIS  MUST  BE  THIS  WAY
