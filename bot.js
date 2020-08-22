@@ -57,6 +57,7 @@ if(msg.content.length >= 10) {
 
 await messageto.react('✅');
 await messageto.react('❌');
+await moderationchannel.messages.fetch(messageto.id);
    }).catch(error => {
 
 // error
@@ -139,7 +140,7 @@ else if(category == '?other') {
 
 }
 else if(react.emoji.name === '❌') {
-  await moderationchannel.messages.fetch(react.message.id);
+   
    if(react.count <= 1) return;
    react.message.channel.send('```Submission Deleted```');
    react.message.delete();
