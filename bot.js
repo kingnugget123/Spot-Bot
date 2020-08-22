@@ -15,6 +15,12 @@ client.on('message', msg => {
 
 	if(msg.author.bot) return;
 
+    if(msg.content.includes('discord.gg/' || 'discordapp.com/invite/') && msg.channel.id != commandchannel){
+		 msg.delete();
+		 return message.reply('You cannot post server invites here!');
+	}
+
+
 	if(msg.content.startsWith('ping')) {
 
 		msg.reply('Pong!, you guys treat me like scum, especially you ' + '<@' + msg.author + '>');
