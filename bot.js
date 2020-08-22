@@ -57,8 +57,7 @@ if(msg.content.length >= 10) {
 
 await messageto.react('✅');
 await messageto.react('❌');
-await moderationchannel.fetch(messageto.id);
-   }).catch(error => {
+await channel.messages.fetch({ limit: 50 }).then(messages => console.log(`Received ${messages.size} messages`)).catch(console.error);
 
 // error
 
@@ -91,6 +90,7 @@ const PcChannel = client.channels.cache.get('745787495098351696');
 const OtherChannel = client.channels.cache.get('745787545719144518');
 const guildid = client.guilds.cache.get('745787068843688017');
 const moderationchannel = client.channels.cache.get('746339469178699886');
+
 
 console.log(react.emoji.name);
 console.log(react.message.content);
