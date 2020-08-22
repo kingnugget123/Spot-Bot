@@ -105,7 +105,7 @@ const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
 let AdvertisementPost = new Discord.MessageEmbed();
 AdvertisementPost.setDescription(react.message.embeds[0].description);
-AdvertisementPost.setAuthor(react.message.embeds[0].author);
+AdvertisementPost.setAuthor(react.message.embeds[0].author.name);
 
 if(category == '?android') {
 
