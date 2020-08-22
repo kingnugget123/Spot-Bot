@@ -101,7 +101,7 @@ console.log('Correct Channel');
 if(react.count <= 1) return;
 
 if(react.emoji.name === '✅') {
-react.message.channel.send('```Approved Submission```');
+react.message.channel.send('```' + 'Submission Approved By ' + react.tag + ```');
 const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
 let AdvertisementPost = new Discord.MessageEmbed();
@@ -140,7 +140,7 @@ else if(category == '?other') {
 }
 else if(react.emoji.name === '❌') {
    
-   react.message.channel.send('```Submission Deleted```');
+   react.message.channel.send('```' + 'Submission Approved By ' + react.tag + ```'); 
    react.message.delete();
 }
 });
