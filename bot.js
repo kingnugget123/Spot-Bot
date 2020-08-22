@@ -96,6 +96,7 @@ console.log(react.emoji.name);
 console.log(react.message.content);
 
 if(react.channel.id == moderationchannel.id){
+console.log('Correct Channel');
 
 channel.messages.fetch({ limit: 50 })
   .then(messages => console.log(`Received ${messages.size} messages`))
