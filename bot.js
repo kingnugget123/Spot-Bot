@@ -51,8 +51,7 @@ client.on('message', msg => {
 					messagewithoutcategory = msg.content.substring(6);
 				}
 				let AdvertisementPost = new Discord.MessageEmbed();
-			AdvertisementPost = new Discord.MessageEmbed().setAuthor('By @' + msg.author.tag).setDescription('Description \u200b' + messagewithoutcategory).setTitle(adcategory).setImage(msg.author.avatarURL());
-			AdvertisementPost.thumbnail.size == 0.1;
+			AdvertisementPost = new Discord.MessageEmbed().setAuthor('By @' + msg.author.tag).setDescription('Description \u200b' + messagewithoutcategory).setTitle(adcategory).setThumbnail(msg.author.avatarURL());
 				moderationchannel.send(AdvertisementPost).then(async messageto => {
 
 					await messageto.react('✅');
