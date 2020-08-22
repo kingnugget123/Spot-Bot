@@ -101,9 +101,9 @@ console.log('Correct Channel');
 if(react.count <= 1) return;
 
 if(react.emoji.name === '✅') {
-react.message.channel.send('```Submission Approved```').then(msg =>{
-
-   msg.delete(5000);
+react.message.channel.send('```Submission Approved```').then(mesg =>{
+console.log('Deleting Message');
+   mesg.delete(5000);
 });
 const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
@@ -143,9 +143,9 @@ else if(category == '?other') {
 }
 else if(react.emoji.name === '❌') {
    
-   react.message.channel.send('```Submission Denied```').then(msg =>{
+   react.message.channel.send('```Submission Denied```').then(messg =>{
 
-      msg.delete(5000);
+      messg.delete(5000);
    });
    react.message.delete();
 }
