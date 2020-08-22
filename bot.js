@@ -16,7 +16,7 @@ client.on('message', msg => {
 
 	if(msg.content.startsWith('ping')) {
 
-		msg.reply('Pong!, you guys treat me like scum');
+		msg.reply('Pong!, you guys treat me like scum, especially you ' + msg.author);
 		msg.react('🏓');
 	}
 
