@@ -95,7 +95,7 @@ const moderationchannel = client.channels.cache.get('746339469178699886');
 console.log(react.emoji.name);
 console.log(react.message.content);
 
-if(!react.channel.id == moderationchannel.id) return;
+if(!react.message.channel.id == moderationchannel.id) return;
 console.log('Correct Channel');
 
 if(react.count <= 1) return;
