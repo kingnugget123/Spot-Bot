@@ -33,7 +33,7 @@ client.on('message', msg => {
 				return;
 			} 	    
 			
- 			else if(msg.content.length >= 10 && message.content.length <= 1500) {
+ 			else if(msg.content.length >= 10 && msg.content.length <= 1500) {
                
 				advertisedrecently.add(msg.author.id);
 				setTimeout(() => {
