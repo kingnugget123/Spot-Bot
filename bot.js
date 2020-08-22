@@ -60,15 +60,15 @@ client.on('message', msg => {
                        icon_url: msg.author.avatarURL(),
 				   },
 				   title: {
-                  name: adcategory
+                  name: adcategory.toString()
 				   },
                    description: '',
                    footer: {
-                       text: adcategory,
+                       text: adcategory.toString(),
                    },
                    fields: [
                        {
-                           name: messagewithoutcategory,
+                           name: messagewithoutcategory.toString(),
                            value: '2nd Line',
                        },
                        {
