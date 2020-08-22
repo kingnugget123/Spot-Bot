@@ -102,8 +102,9 @@ if(react.count <= 1) return;
 
 if(react.emoji.name === '✅') {
 react.message.channel.send('```Submission Approved```').then(mesg =>{
-console.log('Deleting Message');
-   mesg.delete(5000);
+
+   mesg.delete({ timeout: 5000, // time before delete
+}).catch('Error while deleting message');
 });
 const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
@@ -145,8 +146,10 @@ else if(react.emoji.name === '❌') {
    
    react.message.channel.send('```Submission Denied```').then(messg =>{
 
-      messg.delete(5000);
-   });
+      messg.delete({ timeout: 5000, 
+      // Time before delete
+   }).catch('Error while deleting message');
+});
    react.message.delete();
 }
 });
