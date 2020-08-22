@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const advertisedrecently = new Set();
 
 client.once('ready', () => {
 	console.log('Ready!');
@@ -26,10 +27,18 @@ client.on('message', msg => {
 
 		if(msg.content.startsWith('?android') | msg.content.startsWith('?ios') | msg.content.startsWith('?pc') | msg.content.startsWith('?other')) {
 
+            if(advertisedrecently.has(msg.author.id)) {
 
-			if(msg.content.length >= 10) {
-
-
+				msg.reply('You have to wait 1 hour between advertisements.')
+				return;
+			} 	    
+			
+ 			else if(msg.content.length >= 10 && message.content.length <= 1500) {
+               
+				advertisedrecently.add(msg.author.id);
+				setTimeout(() => {
+                advertisedrecently.delete(msg.author.id)
+				}, 30000)
 				msg.reply('Sent your advertisement for manual approval, Please be patient.');
 				let messagewithoutcategory;
 				let adcategory;
@@ -66,7 +75,7 @@ client.on('message', msg => {
 			}
 			else {
 
-				msg.reply('Sorry, your message needs to be at least 10 letters long.');
+				msg.reply('Sorry, your message needs to be at least 10 letters long, or at most 1500 letters long.');
 
 			}
 
