@@ -97,7 +97,7 @@ console.log(react.message.content);
 
 if(react.channel.id == moderationchannel.id){
 console.log('Correct Channel');
-
+channel.fetch(react.message.id);
 if(react.count <= 1) return;
 
 
