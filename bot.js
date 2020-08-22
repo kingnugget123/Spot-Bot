@@ -51,7 +51,7 @@ client.on('message', msg => {
 					messagewithoutcategory = msg.content.substring(6);
 				}
 				let AdvertisementPost = new Discord.MessageEmbed();
-            AdvertisementPost = new Discord.MessageEmbed().setAuthor('By @' + msg.author.tag).setDescription('Description \u200b' + messagewithoutcategory).setTitle(adcategory).setImage(msg.author.avatarURL());
+            AdvertisementPost = new Discord.MessageEmbed().setAuthor('By @' + msg.author.tag).setDescription('Description \u200b' + messagewithoutcategory).setTitle(adcategory).setImage(msg.author.avatarURL().size(.1));
 				moderationchannel.send(AdvertisementPost).then(async messageto => {
 
 					await messageto.react('✅');
@@ -110,7 +110,7 @@ client.on('messageReactionAdd', react => {
 		const AdvertisementPost = new Discord.MessageEmbed();
       AdvertisementPost.setDescription(react.message.embeds[0].description);
       AdvertisementPost.setAuthor(react.message.embeds[0].author.name);
-      AdvertisementPost.setThumbnail(react.message.embeds[0].thumbnail.url);
+      AdvertisementPost.setThumbnail(react.message.embeds[0].thumbnail.url).size(.1);
 
 		if(category == '?android') {
 
