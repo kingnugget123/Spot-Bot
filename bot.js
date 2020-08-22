@@ -51,7 +51,7 @@ client.on('message', msg => {
 					messagewithoutcategory = msg.content.substring(6);
 				}
 				let AdvertisementPost = new Discord.MessageEmbed();
-				AdvertisementPost = new Discord.MessageEmbed().setAuthor(msg.author).setDescription(messagewithoutcategory).setTitle(adcategory);
+				AdvertisementPost = new Discord.MessageEmbed().setAuthor(msg.author.id).setDescription(messagewithoutcategory).setTitle(adcategory);
 				moderationchannel.send(AdvertisementPost).then(async messageto => {
 
 					await messageto.react('✅');
@@ -109,7 +109,7 @@ client.on('messageReactionAdd', react => {
 		console.log(react.message.embeds[0].title);
 		const AdvertisementPost = new Discord.MessageEmbed();
       AdvertisementPost.setDescription(react.message.embeds[0].description);
-      AdvertisementPost.setAuthor(react.message.embeds[0].author);
+      AdvertisementPost.setAuthor('<@' + react.message.embeds[0].author + '>');
 
 		if(category == '?android') {
 
