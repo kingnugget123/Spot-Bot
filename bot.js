@@ -58,7 +58,10 @@ client.on('message', msg => {
                    author: {
                        name: msg.author.tag,
                        icon_url: msg.author.avatarURL(),
-                   },
+				   },
+				   title: {
+                  name: adcategory
+				   },
                    description: '',
                    footer: {
                        text: adcategory,
@@ -78,7 +81,7 @@ client.on('message', msg => {
                        }
                    ]
                }
-           }).setTitle(adcategory);
+           })
 
 				moderationchannel.send(AdvertisementPost).then(async messageto => {
 
