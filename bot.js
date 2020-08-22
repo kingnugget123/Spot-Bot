@@ -98,11 +98,13 @@ client.on('messageReactionAdd', react => {
 	if(react.count <= 1) return;
 
 	if(react.emoji.name === '✅') {
-		react.message.channel.send('```Submission Approved```').then(mesg =>{
+		react.message.channel.send('```Submission Approved```').then(messg =>{
 
-			mesg.delete({ timeout: 5000, // time before delete
-			}).catch('Error while deleting message');
-		});
+            messg.delete({ timeout: 5000,
+               // Time before delete
+            }).catch('Error while deleting message');
+         });
+         
 		const category = react.message.embeds[0].title;
 		console.log(react.message.embeds[0].title);
 		const AdvertisementPost = new Discord.MessageEmbed();
