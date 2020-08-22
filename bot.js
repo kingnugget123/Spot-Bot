@@ -97,7 +97,10 @@ console.log(react.message.content);
 
 if(react.channel.id == moderationchannel.id){
 
-channel.messages.fetch({ limit: 50 });
+channel.messages.fetch({ limit: 50 })
+  .then(messages => console.log(`Received ${messages.size} messages`))
+  .catch(console.error);
+
 if(react.count <= 1) return;
 
 
