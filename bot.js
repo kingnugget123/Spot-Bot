@@ -97,10 +97,9 @@ console.log(react.message.content);
 if(react.channel.id == moderationchannel.id){
 console.log('Correct Channel');
 
-
+if(react.count <= 1) return;
 
 if(react.emoji.name === '✅') {
-if(react.count <= 1) return;
 react.message.channel.send('```Approved Submission```');
 const category = react.message.embeds[0].title;
 console.log(react.message.embeds[0].title);
@@ -140,7 +139,6 @@ else if(category == '?other') {
 }
 else if(react.emoji.name === '❌') {
    
-   if(react.count <= 1) return;
    react.message.channel.send('```Submission Deleted```');
    react.message.delete();
 }
