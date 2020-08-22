@@ -140,7 +140,7 @@ else if(category == '?other') {
 }
 else if(react.emoji.name === '❌') {
    
-   react.message.channel.send('```Submission Approved```'); 
+   react.message.channel.send('```Submission Denied```'); 
    react.message.delete();
 }
 });
