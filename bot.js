@@ -108,7 +108,8 @@ client.on('messageReactionAdd', react => {
 		const category = react.message.embeds[0].title;
 		console.log(react.message.embeds[0].title);
 		const AdvertisementPost = new Discord.MessageEmbed();
-		AdvertisementPost.setDescription(react.message.embeds[0].description);
+      AdvertisementPost.setDescription(react.message.embeds[0].description);
+      AdvertisementPost.setAuthor(react.message.embeds[0].author);
 
 		if(category == '?android') {
 
