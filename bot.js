@@ -89,12 +89,15 @@ const iosChannel = client.channels.cache.get('745787459513745428');
 const PcChannel = client.channels.cache.get('745787495098351696');
 const OtherChannel = client.channels.cache.get('745787545719144518');
 const guildid = client.guilds.cache.get('745787068843688017');
+const moderationchannel = client.channels.cache.get('746339469178699886');
 
 
 console.log(react.emoji.name);
 console.log(react.message.content);
 
+if(react.channel.id == moderationchannel.id){
 
+channel.messages.fetch({ limit: 50 });
 if(react.count <= 1) return;
 
 
@@ -141,6 +144,7 @@ else if(react.emoji.name === '❌') {
 
    react.message.channel.send('```Submission Deleted```');
    react.message.delete();
+}
 }
 });
 // THIS  MUST  BE  THIS  WAY
